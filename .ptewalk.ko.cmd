@@ -1,0 +1,1 @@
+cmd_/root/spectre_research/ptewalk.ko := ld -r -m elf_x86_64 -z noexecstack --no-warn-rwx-segments --build-id=sha1  -T scripts/module.lds -o /root/spectre_research/ptewalk.ko /root/spectre_research/ptewalk.o /root/spectre_research/ptewalk.mod.o;  true

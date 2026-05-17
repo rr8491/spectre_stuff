@@ -1,0 +1,1 @@
+cmd_/root/spectre_research/Module.symvers := sed 's/\.ko$$/\.o/' /root/spectre_research/modules.order | scripts/mod/modpost -m -a -E -o /root/spectre_research/Module.symvers -e -i Module.symvers   -w -T -

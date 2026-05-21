@@ -70,9 +70,29 @@ if (ioctl(fd, IOCTL_CHECK_PTE, (unsigned long)page) < 0) {
 }
 
 
- volatile char x = *(volatile char *)page;
-(void)x;
+for (int i = 0; i < 100000; i++) {
 
+    asm volatile(
+        "call 1f\n\t"  // pushes return address onto stack
+
+        "movb (%[target]), %%al\n\t" // 1f should return to here once it returns
+
+        "jmp 2f\n\t"
+
+        "1:\n\t"
+        "pop %%rax\n\t" // removes movb inst from architectural stack, RSB still has the movb instr
+        "lea 2f(%%rip), %%rax\n\t" // put address of 2f in rax
+        "push %%rax\n\t" // push rax to architectural stack
+        "ret\n\t" // this goes to address of label2, but RSB should predict movb instr
+
+        "2:\n\t"
+        :
+        : [target] "r" (page)
+        : "rax", "memory"
+    );
+} 
+
+sched_yield();
 
  if (ioctl(fd, IOCTL_CHECK_PTE, (unsigned long)page) < 0) {
     perror("ioctl CHECK_PTE");
@@ -85,3 +105,15 @@ if (ioctl(fd, IOCTL_CHECK_PTE, (unsigned long)page) < 0) {
 
     return 0;
 }
+
+
+//logic
+/*
+1. mmap page
+2. touch page normally, this will set accessed bit to 1 (32)
+3. clear accessed bit, will set to 0
+4. check cleared state, print accessed bit 0
+5. run RSB speculative block
+6. check accessed bit again
+
+*/

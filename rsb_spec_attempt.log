@@ -1,0 +1,7 @@
+[110686.089264] ptewalk: unloaded
+[110688.932647] ptewalk: loaded, device created at /dev/ptewalk
+[110692.503218] ptewalk: addr=7facd3dcf000 raw_pte=80000003345e0067 present=1 accessed/young=32 dirty=64 write=2
+[110692.503224] ptewalk: cleared accessed bit addr=7facd3dcf000 old_pte=80000003345e0067 new_pte=80000003345e0047 old_young=1 new_young=0
+[110692.503256] ptewalk: addr=7facd3dcf000 raw_pte=80000003345e0047 present=1 accessed/young=0 dirty=64 write=2
+[110692.503277] ptewalk: addr=7facd3dcf000 raw_pte=80000003345e0047 present=1 accessed/young=0 dirty=64 write=2
+[110692.503883] ptewalk: addr=7facd3dcf000 raw_pte=80000003345e0047 present=1 accessed/young=0 dirty=64 write=2

@@ -11,7 +11,7 @@ ccflags-y += -g0
 all:
 	make -C $(KDIR) M=$(PWD) SKIP_BTF=1 modules
 	strip --strip-debug ptewalk.ko
-	gcc -Wall -Wextra -O2 accesspt_test.c -o accesspt
+	gcc -Wall -Wextra -O0 -no-pie -fno-pie accesspt_test.c -o accesspt
 
 clean:
 	make -C $(KDIR) M=$(PWD) clean

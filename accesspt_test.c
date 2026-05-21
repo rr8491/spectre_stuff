@@ -83,6 +83,8 @@ for (int i = 0; i < 100000; i++) {
         "pop %%rax\n\t" // removes movb inst from architectural stack, RSB still has the movb instr
         "lea 2f(%%rip), %%rax\n\t" // put address of 2f in rax
         "push %%rax\n\t" // push rax to architectural stack
+        "clflush (%%rsp)\n\t"
+        "mfence\n\t"
         "ret\n\t" // this goes to address of label2, but RSB should predict movb instr
 
         "2:\n\t"

@@ -1,0 +1,12 @@
+[ 4026.462488] ptewalk: unloaded
+[ 4029.018415] ptewalk: loaded, device created at /dev/ptewalk
+[ 4031.627986] ptewalk: addr=7f890c939000 raw_pte=800000015dd77067 present=1 accessed/young=32 dirty=64 write=2
+[ 4031.627998] ptewalk: cleared accessed bit addr=7f890c939000 old_pte=800000015dd77067 new_pte=800000015dd77047 old_young=1 new_young=0
+[ 4031.628001] ptewalk: addr=7f890c939000 raw_pte=800000015dd77047 present=1 accessed/young=0 dirty=64 write=2
+[ 4031.628002] ptewalk: addr=7f890c939000 raw_pte=800000015dd77047 present=1 accessed/young=0 dirty=64 write=2
+[ 4031.653511] ptewalk: addr=7f890c939000 raw_pte=800000015dd77067 present=1 accessed/young=32 dirty=64 write=2
+mapped page at 0x7fde3bea9000
+cached access time: 40 cycles
+flushed access time: 260 cycles
+post-spec access time: 40 cycles
+likely speculative cache hit

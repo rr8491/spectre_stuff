@@ -1,10 +1,10 @@
-[ 5466.468044] ptewalk: loaded, device created at /dev/ptewalk
-[ 5471.540476] ptewalk: addr=7f25c5103000 raw_pte=8000000109001067 present=1 accessed/young=32 dirty=64 write=2
-[ 5471.540482] ptewalk: cleared accessed bit addr=7f25c5103000 old_pte=8000000109001067 new_pte=8000000109001047 old_young=1 new_young=0
-[ 5471.540483] ptewalk: addr=7f25c5103000 raw_pte=8000000109001047 present=1 accessed/young=0 dirty=64 write=2
-[ 5471.540484] ptewalk: addr=7f25c5103000 raw_pte=8000000109001047 present=1 accessed/young=0 dirty=64 write=2
-[ 5471.540509] ptewalk: addr=7f25c5103000 raw_pte=8000000109001067 present=1 accessed/young=32 dirty=64 write=2
-[ 5471.540511] ptewalk: cleared accessed bit addr=7f25c5103000 old_pte=8000000109001067 new_pte=8000000109001047 old_young=1 new_young=0
-[ 5471.540544] ptewalk: addr=7f25c5103000 raw_pte=8000000109001047 present=1 accessed/young=0 dirty=64 write=2
-[ 5471.540545] ptewalk: addr=7f25c5103000 raw_pte=8000000109001047 present=1 accessed/young=0 dirty=64 write=2
-[ 5471.567216] ptewalk: addr=7f25c5103000 raw_pte=8000000109001067 present=1 accessed/young=32 dirty=64 write=2
+[ 6209.301988] ptewalk: addr=7f77023b4000 raw_pte=800000015c572047 present=1 accessed/young=0 dirty=64 write=2
+[ 6209.664224] ptewalk: addr=7ffbb65fb000 raw_pte=800000016705a067 present=1 accessed/young=32 dirty=64 write=2
+[ 6209.664236] ptewalk: cleared accessed bit addr=7ffbb65fb000 old_pte=800000016705a067 new_pte=800000016705a047 old_young=1 new_young=0
+[ 6209.664239] ptewalk: addr=7ffbb65fb000 raw_pte=800000016705a047 present=1 accessed/young=0 dirty=64 write=2
+[ 6209.664240] ptewalk: addr=7ffbb65fb000 raw_pte=800000016705a047 present=1 accessed/young=0 dirty=64 write=2
+[ 6209.664362] ptewalk: addr=7ffbb65fb000 raw_pte=800000016705a047 present=1 accessed/young=0 dirty=64 write=2
+[ 6209.664368] ptewalk: cleared accessed bit addr=7ffbb65fb000 old_pte=800000016705a047 new_pte=800000016705a047 old_young=0 new_young=0
+[ 6209.664370] ptewalk: addr=7ffbb65fb000 raw_pte=800000016705a047 present=1 accessed/young=0 dirty=64 write=2
+[ 6209.664371] ptewalk: addr=7ffbb65fb000 raw_pte=800000016705a047 present=1 accessed/young=0 dirty=64 write=2
+[ 6209.691011] ptewalk: addr=7ffbb65fb000 raw_pte=800000016705a067 present=1 accessed/young=32 dirty=64 write=2

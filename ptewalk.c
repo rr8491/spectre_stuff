@@ -99,7 +99,7 @@ static int inspect_pte(unsigned long addr, bool clear_young )
 
         set_pte_at(mm, addr, pte, newpte);
 
-        __flush_tlb_one_user(addr);
+        //__flush_tlb_one_user(addr);
    
         pr_info("ptewalk: cleared accessed bit addr=%lx old_pte=%lx new_pte=%lx old_young=%d new_young=%d\n",
                 addr,

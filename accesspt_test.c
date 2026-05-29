@@ -112,6 +112,26 @@ if (ioctl(fd, IOCTL_CHECK_PTE, (unsigned long)page) < 0) {
     _mm_clflush(page);
     _mm_mfence();
 
+    if (ioctl(fd, IOCTL_CHECK_PTE, (unsigned long)page) < 0) {
+    perror("ioctl CHECK_PTE");
+    munmap(page, PAGESIZE);
+    close(fd);
+    return 1;
+}
+
+   if (ioctl(fd, IOCTL_CLEAR_YOUNG, (unsigned long)page) < 0) {
+    perror("ioctl CLEAR_YOUNG");
+    munmap(page, PAGESIZE);
+    close(fd);
+    return 1;
+}
+
+    if (ioctl(fd, IOCTL_CHECK_PTE, (unsigned long)page) < 0) {
+    perror("ioctl CHECK_PTE");
+    munmap(page, PAGESIZE);
+    close(fd);
+    return 1;
+}
 
 for (int i = 0; i < 100000; i++) {
 
@@ -119,7 +139,7 @@ for (int i = 0; i < 100000; i++) {
         "call 1f\n\t"  // pushes return address onto stack
 
         "movb (%[target]), %%al\n\t" // 1f should return to here once it returns
-
+        "ud2\n\t"
         "jmp 2f\n\t"
 
         "1:\n\t"
